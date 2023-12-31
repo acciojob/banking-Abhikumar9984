@@ -70,7 +70,7 @@ public class BankAccount {
     public void setBalance(double balance) {
         this.balance = balance;
     }
-
+    //useful
     public void setName(String name) {
         this.name = name;
     }

@@ -46,7 +46,7 @@ public class BankAccount {
 
     public void deposit(double amount) {
         //add amount to balance
-        this.balance =+ amount;
+        this.balance += amount;
     }
 
     public void withdraw(double amount) throws java.lang.Exception {
@@ -56,6 +56,8 @@ public class BankAccount {
          if(remainingAmount<minBalance){
              throw new Exception("Insufficient Balance");
          }
+
+         this.balance  = remainingAmount;
 
     }
 

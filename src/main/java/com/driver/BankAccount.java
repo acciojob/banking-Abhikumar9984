@@ -1,5 +1,6 @@
 package com.driver;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class BankAccount {
@@ -26,18 +27,27 @@ public class BankAccount {
              throw new Exception("Account Number can not be generated");
          }
          else{
-             StringBuilder sb  = new StringBuilder();
-             int nines  = sum/10;
-             int rem = sum%10;
-             while(nines-->0){
-                 sb.append("9");
-             }
-                 sb.append(rem);
-             while(sb.length()<digits)
-                 sb.append("0");
 
-             return sb.toString();
+             int[] arr  = new int[digits];
+             for(int i = 0;i<digits;i++){
+                 arr[i]  = 9;
+             }
+             int index  = 0;
+             while(sumOfArr(arr)>sum){
+                 int diff  = arr[index]-1;
+                 arr[index++] = Math.min(diff , sum-sumOfArr(arr)+diff);
+             }
+
+             return arr.toString();
+
          }
+
+
+    }
+    public int sumOfArr(int[] arr){
+        int sum  = 0;
+        for(int i : arr) sum  += i;
+        return sum;
     }
 
     public void deposit(double amount) {

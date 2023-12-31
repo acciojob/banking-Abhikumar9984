@@ -12,8 +12,6 @@ public class BankAccount {
     }
 
     public BankAccount(String name, double balance, double minBalance) {
-
-
            this.name  = name;
            this.balance = balance;
            this.minBalance = minBalance;
@@ -34,9 +32,7 @@ public class BankAccount {
              while(nines-->0){
                  sb.append("9");
              }
-             while(rem-->0){
                  sb.append(rem);
-             }
              while(sb.length()<digits)
                  sb.append("0");
 

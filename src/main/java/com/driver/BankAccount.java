@@ -27,8 +27,8 @@ public class BankAccount {
          }
          else{
              StringBuilder sb  = new StringBuilder();
-             int nines  = sum/9;
-             int rem = sum%9;
+             int nines  = sum/10;
+             int rem = sum%10;
              while(nines-->0){
                  sb.append("9");
              }
